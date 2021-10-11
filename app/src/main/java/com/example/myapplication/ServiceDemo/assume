@@ -1,0 +1,4 @@
+Service使用流程：
+Service里定义一个Binder子类，在onbind中返回该子类实例
+Activity中创建一个Binder子类实例，并创建一个ServiceConnection实例，重写的方法中将输入参数赋值给Binder子类，完成绑定
+start或bind service，丢入connection参数

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature android:name="android.hardware.camera.any" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication" >
+        <activity android:name=".RxJavaDemo.RxJavaActivity" >
+        </activity>
+        <activity android:name=".EventBusDemo.SecondEventBusActivity" />
+        <activity android:name=".DispatchDemo.DispatchActivity" />
+        <activity android:name=".EventBusDemo.EventBusActivity" />
+
+        <service
+            android:name=".MultiThread.TestIntentService"
+            android:exported="false" />
+
+        <activity android:name=".SQLiteDemo.SQLiteActivity" />
+        <activity android:name=".MultiProcess.AIDLDemo.BookManagerActivity" />
+
+        <service
+            android:name=".MultiProcess.AIDLDemo.BookManagerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+
+        <activity android:name=".MultiProcess.Messenger.MessengerActivity" />
+
+        <service
+            android:name=".MultiProcess.Messenger.MessengerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+
+        <activity android:name=".ContentProviderDemo.SPHelper.SPHelperActivity" />
+        <activity android:name=".ContentProviderDemo.ContentProviderActivity" />
+        <activity android:name=".SpinnerDemo.SpinnerActivity" /> <!-- <activity android:name=".MVVMDemo.VmActivity" /> -->
+        <activity android:name=".MVPDemo.UserActivity" />
+        <activity android:name=".TimerDemo.TimerActivity" />
+        <activity android:name=".CameraXDemo.CameraxActivity" />
+        <activity android:name=".ListViewDemo.RecyclerViewActivity" />
+        <activity android:name=".NotificationTest.NoticeContentActivity" />
+        <activity android:name=".NotificationTest.NoticeActivity" />
+        <activity android:name=".WebDemo.WebActivity" />
+
+        <service
+            android:name=".ServiceDemo.DemoService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ServiceDemo.ServiceTestActivity" />
+        <activity android:name=".BroadCastDemo.BroadcastActivity" />
+        <activity android:name=".ListViewDemo.ListViewActivity" />
+        <activity android:name=".LayoutDemo.LayoutActivity" />
+        <activity android:name=".IntentDemo.BeforeActivity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".ContentProviderDemo.SPHelper.SPContentProvider"
+            android:authorities="com.example.myapplication.SPHelper"
+            android:exported="false" />
+
+        <activity android:name=".IntentDemo.AfterActivity" >
+
+            <!-- 控制跳转 -->
+            <intent-filter>
+                <action android:name="com.example.myapplication.ACTION_START" />
+
+                <category android:name="com.example.myapplication.MY_CATEGORY" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

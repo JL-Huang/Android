@@ -1,0 +1,2 @@
+观察aidl文件夹，创建了两个aidl，book对应实现了Parcelable的类，bookManager作用是操作book，当中的接口是可以跨进程调用的方法
+aidl创建后，会自动在gen目录下生成java文件，因此其他类可以直接调用同名接口或方法
