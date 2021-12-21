@@ -13,10 +13,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="跳转"
         android:id="@+id/bt_message"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="注册"
         android:id="@+id/bt_subscription"/>
 
 </LinearLayout>

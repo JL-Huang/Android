@@ -16,9 +16,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myapplication.EventBusDemo.EventBusActivity;
 import com.example.myapplication.MultiProcess.AIDLDemo.BookManagerActivity;
 import com.example.myapplication.MultiProcess.Messenger.MessengerActivity;
 import com.example.myapplication.RxJavaDemo.RxJavaActivity;
+import com.example.myapplication.进度条.ProgressActivity;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Intent intent= new Intent(MainActivity.this, RxJavaActivity.class);
+                    Intent intent= new Intent(MainActivity.this, ProgressActivity.class);
                     startActivity(intent);
 //                String url = "lianjiabeike://share/inviteFriends";
 //                Uri uri = Uri.parse(url);

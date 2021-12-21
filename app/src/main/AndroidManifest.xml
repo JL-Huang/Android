@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication" >
+    package="com.example.myapplication">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -15,9 +15,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MyApplication" >
-        <activity android:name=".RxJavaDemo.RxJavaActivity" >
-        </activity>
+        android:theme="@style/Theme.MyApplication">
+        <activity android:name=".进度条.ProgressActivity"></activity>
+        <activity android:name=".弹窗.DialogActivity" />
+        <activity android:name=".RxJavaDemo.RxJavaActivity" />
         <activity android:name=".EventBusDemo.SecondEventBusActivity" />
         <activity android:name=".DispatchDemo.DispatchActivity" />
         <activity android:name=".EventBusDemo.EventBusActivity" />
@@ -64,7 +65,7 @@
         <activity android:name=".ListViewDemo.ListViewActivity" />
         <activity android:name=".LayoutDemo.LayoutActivity" />
         <activity android:name=".IntentDemo.BeforeActivity" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -77,7 +78,7 @@
             android:authorities="com.example.myapplication.SPHelper"
             android:exported="false" />
 
-        <activity android:name=".IntentDemo.AfterActivity" >
+        <activity android:name=".IntentDemo.AfterActivity">
 
             <!-- 控制跳转 -->
             <intent-filter>

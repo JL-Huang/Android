@@ -1,0 +1,26 @@
+//    结合subscribeOn和observeOn
+//    Schedulers.immediate():直接在当前线程运行，它是timeout、timeInterval和timestamp操作符的默认 调度器。
+//    Schedulers.newThread():总是启用新线程，并在新线程执行操作。
+//    Schedulers.io():I/O操作(读写文件、读写数据库、网络信息交互等)所使用的 Scheduler。行为模式和 newThread()差不多，区别在于 io() 的内部实现是用一个无数量上限的线程池，可以重用空闲的线程，因此多数情况下io() 比 newThread() 更有效率。Schedulers.computation():计算所使用的 Scheduler，例如图形的计算。这个 Scheduler使用固定线程 池，大小为 CPU 核数。不要把 I/O 操作放在 computation() 中，否则 I/O操作的等待时间会浪费 CPU。它 是 buffer、debounce、delay、interval、sample 和 skip操作符的默认调度器。
+//    Schedulers.trampoline():当我们想在当前线程执行一个任务时，并不是立即时，可以 用.trampoline()将它入队。这个调度器将会处理它的队列并且按序运行队列中的每一个任务。它是repeat 和retry操作符默认的调度器。
+//    AndroidSchedulers.mainThread()—RxAndroid库中提供的Scheduler，它指定的操作在主线程中运行。
+
+//    Subject 既可以是一个 Observer 也可以是一个 Observerable，它是连接 Observer 和Observerable的桥梁。
+//    因此，Subject可以被理解为Subject=Observable+Observer。RxJava提供了以下4种Subject。
+//    1.PublishSubject
+//    PublishSubject只会把在订阅发生的时间点之后来自原始Observable的数据发射给观察者。需要注意的 是，
+//    PublishSubject可能会一创建完成就立刻开始发射数据，因此这里会有一个风险:在Subject被创建后到 有观察者订阅它之前这个时间段内，
+//    一个或多个数据可能会丢失。如果要确保来自原始Observable的所有数 据都被分发，则可以当所有观察者都已经订阅时才开始发射数据，或者改用ReplaySubject。
+//    2.BehaviorSubject
+//    当Observer订阅BehaviorSubject时，它开始发射原始Observable最近发射的数据。
+//    如果此时还没有收到 任何数据，它会发射一个默认值，然后继续发射其他任何来自原始Observable的数据。
+//    如果原始的 Observable因为发生了一个错误而终止，BehaviorSubject将不会发射任何数据，但是会向Observer传递一个 异常通知。
+//    3.ReplaySubject
+//    不管Observer何时订阅ReplaySubject，ReplaySubject均会发射所有来自原始Observable的数据给 Observer。
+//    有不同类型的ReplaySubject，它们用于限定Replay的范围，例如设定Buffer的具体大小，或者设 定具体的时间范围。
+//    如果使用ReplaySubject作为Observer，注意不要在多个线程中调用onNext、onComplete 和onError方法。
+//    这可能会导致顺序错乱，并且违反了Observer规则。
+//    4.AsyncSubject
+//    当Observable完成时，AsyncSubject只会发射来自原始Observable的最后一个数据。
+//    如果原始的 Observable 因为发生了错误而终止，AsyncSubject 将不会发射任何数据，但是会向Observer传递一个异常通 知。
+}

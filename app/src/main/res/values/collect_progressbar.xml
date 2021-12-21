@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="reachedColor" format="color" />
+    <attr name="unreachedColor" format="color" />
+    <attr name="textSize" format="dimension" />
+    <attr name="textColor" format="color" />
+    <attr name="strokeSize" format="dimension" />
+
+    <declare-styleable name="collect_progressbar">
+        <attr name="strokeSize" />
+        <attr name="textSize" />
+        <attr name="textColor" />
+        <attr name="unreachedColor" />
+        <attr name="reachedColor" />
+    </declare-styleable>
+
+</resources>

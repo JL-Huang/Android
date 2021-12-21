@@ -2,58 +2,59 @@ package com.example.myapplication.DesignMode;
 //适配器模式
 public class AdapterDemo {
     public interface MusicPlayer{
-        public void play(String format);
+        void playMP3();
     }
-    public interface VedioPlayer{
-        public void playWMV(String format);
-        public void playRMVB(String format);
+    public interface PhotoPlayer {
+        void playJPG();
     }
     public class MP3 implements MusicPlayer{
 
         @Override
-        public void play(String format) {
+        public void playMP3() {
 
         }
     }
-    public static class MP4 implements VedioPlayer{
-
+    public static class Album implements PhotoPlayer {
         @Override
-        public void playWMV(String format) {
-
+        public void playJPG() {
         }
+    }
+    /*    这是另一种写法，关键是适配器实现当前接口，在接口方法中实现别的类的方法
+    public static class Adapter extends Album implements MusicPlayer{
 
+    @Override
+    public void play(String format) {
+        this.play(format);
+    }
+}
+    该类集成了适配器，可以实现同时播放视频与音乐*/
+    public static class Phone implements MusicPlayer,PhotoPlayer{
         @Override
-        public void playRMVB(String format) {
-
+        public void playMP3() {
+            this.playJPG();
+        }
+        @Override
+        public void playJPG() {
         }
     }
 //    该适配器可以实现用音乐播放器放视频
-    public static class MusicAdapter1 implements MusicPlayer{
-//        这里可以进一步改写，新建对象时可以用接口的不同实现类
-    VedioPlayer mp4=new MP4();
-    @Override
-    public void play(String format) {
-        mp4.playRMVB("RMVB");
-        mp4.playWMV("MP4");
+    public static class Adapter implements MusicPlayer{
+    PhotoPlayer album;
+    public Adapter(PhotoPlayer album) {
+        this.album = album;
     }
-}
-//    这是另一种写法，关键是适配器实现当前接口，在接口方法中实现别的类的方法
-    public static class MusicAdapter2 extends MP4 implements MusicPlayer{
+    @Override
+    public void playMP3() {
+        album.playJPG();
+    }
 
-    @Override
-    public void play(String format) {
-        this.playRMVB(format);
-        this.playWMV(format);
-    }
 }
-//    该类集成了适配器，可以实现同时播放视频与音乐
 }
    class AudioPlayer {
     public static void main(String[] args) {
-    AdapterDemo.MusicAdapter1 adapter1=new AdapterDemo.MusicAdapter1();
-    AdapterDemo.MusicAdapter2 adapter2=new AdapterDemo.MusicAdapter2();
-//    实现用音乐播放器实现类，通过play方法实现视频播放
-        adapter1.play("RMVB");
+    AdapterDemo.MusicPlayer mp3              =new AdapterDemo.Adapter(new AdapterDemo.Album());
+//    实现用音乐播放器通过playMP3方法实现图片播放
+        mp3.playMP3();
     }
 
 }
