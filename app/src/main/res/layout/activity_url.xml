@@ -6,9 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UrlDemo.UrlActivity">
-    <WebView
-        android:id="@+id/webView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/button_jump_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转url"
+        android:padding="8dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:background="@drawable/theme_button_1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
