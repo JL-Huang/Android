@@ -16,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".进度条.ProgressActivity"></activity>
+        <activity
+            android:name=".UrlDemo.UrlActivity"
+            android:exported="false" />
+        <activity android:name=".进度条.ProgressActivity" />
         <activity android:name=".弹窗.DialogActivity" />
         <activity android:name=".RxJavaDemo.RxJavaActivity" />
         <activity android:name=".EventBusDemo.SecondEventBusActivity" />

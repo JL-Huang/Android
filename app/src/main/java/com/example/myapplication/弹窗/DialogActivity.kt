@@ -8,12 +8,5 @@ class DialogActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dialog)
-        val dialogFrag =DiaLogFragDemo(object : DiaLogFragDemo.SubmitCallBack{
-            override fun callBack() {
-                TODO("Not yet implemented")
-            }
-
-        })
-        dialogFrag.show(this!!.supportFragmentManager,"")
     }
 }

@@ -20,6 +20,7 @@ import com.example.myapplication.EventBusDemo.EventBusActivity;
 import com.example.myapplication.MultiProcess.AIDLDemo.BookManagerActivity;
 import com.example.myapplication.MultiProcess.Messenger.MessengerActivity;
 import com.example.myapplication.RxJavaDemo.RxJavaActivity;
+import com.example.myapplication.UrlDemo.UrlActivity;
 import com.example.myapplication.进度条.ProgressActivity;
 
 import java.net.MalformedURLException;
@@ -45,11 +46,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                     Intent intent= new Intent(MainActivity.this, ProgressActivity.class);
                     startActivity(intent);
-//                String url = "lianjiabeike://share/inviteFriends";
-//                Uri uri = Uri.parse(url);
-//                System.out.println(TAG + "=======" + uri.getScheme());
-//                System.out.println(TAG + "=======" + uri.getHost());
-//                System.out.println(TAG + "=======" + uri.getPath());
             }
         });
     }
@@ -59,4 +55,11 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.INTERNET}, 1);
         }
     }
+
+    private void testURL() {
+        Intent intent= new Intent(MainActivity.this, UrlActivity.class);
+        startActivity(intent);
+    }
+
+
 }
