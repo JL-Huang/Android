@@ -15,7 +15,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 //        findViewById<View>(R.id.button_jump).setOnClickListener {
-            testURL()
+        testURL()
+        finish()
 //        }
     }
 
